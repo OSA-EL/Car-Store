@@ -1,0 +1,35 @@
+﻿<h1>Edit-Cars</h1 <br /> <br /> 
+
+@{
+   // var curCar = (Car)ViewBag.curcar;  
+}
+
+@model Car
+@* <form action="/Car/EditSave" method="get">
+    <input type="hidden" name="num" value="@Model.Num" /> <br/>
+    Color: <input type="text" name="color" value="@Model.Color" /> <br/>
+    Manfacture: <input type="text" name="manfacture" value="@Model.Manfacture" /> <br/>
+    Model: <input type="text" name="model" value="@Model.Model" /> <br />
+
+    <br />
+    <input type="submit" value="Save" />
+</form> *@
+
+@using (Html.BeginForm("Edit" , "Car" , FormMethod.Post ))
+{
+        @Html.Label("Num" , "Num:") <br />
+        @Html.TextBox("num" , Model.Num)
+    <br /> <br />
+        @Html.Label("Color" , "Color:") <br />
+        @Html.TextBox("color" , Model.Color)
+    <br /> <br />
+        @Html.Label("Manfacture" , "Manfacture:") <br />
+        @Html.TextBox("manfacture" , Model.Manfacture)
+    <br /> <br />
+        @Html.Label("Model" , "Model:") <br />
+        @Html.TextBox("model" , Model.Model)
+    <br /> <br />
+
+    <input type="submit" value="Save" />
+
+}

@@ -1,0 +1,46 @@
+﻿
+@model List<Car> // Declare the resource for this view OR Specify the model for this page as you made it (List <Car>) Model  
+
+<h1>Get-All</h1>
+
+@{
+    // var Carlst = ViewBag.AllCars;
+}
+
+
+
+@Html.ActionLink("Create New Car", "create", "Car", null, new { @class = "btn btn-primary" })
+
+<br />
+<br />
+<div>
+    <table class="table table-bordered table-hover">
+
+        <tr>
+            <th> Car-Num </th>
+            <th> Car-Color </th>
+            <th> Car-Manfacture </th>
+            <th> Car-Model </th>
+            <th> &nbsp; </th>
+            <th> &nbsp; </th>
+            <th> &nbsp; </th>
+
+        </tr>
+@*         @foreach (var item in (List<Car>) Carlst)
+ *@
+
+        @foreach (var item in (List<Car>)Model)
+        {
+          <tr>
+              <td> @item.Num </td>
+              <td> @item.Color </td>
+              <td> @item.Manfacture </td>
+              <td> @item.Model </td>
+              <td>@Html.ActionLink("Select", "getByNum", "Car", new { num = @item.Num }, new { @class = "btn btn-primary" })</td>
+              <td>@Html.ActionLink("Edit", "Edit", "Car", new { num = @item.Num }, new { @class = "btn btn-secondary" })</td>
+              <td>@Html.ActionLink("Delete", "Delete", "Car", new { num = @item.Num }, new { @class = "btn btn-danger" })</td>
+          </tr>
+        }
+    </table>
+
+</div>

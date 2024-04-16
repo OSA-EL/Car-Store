@@ -1,0 +1,36 @@
+﻿<h1>Create New Car</h1>
+<br />
+<br />
+@* <form action="/Car/CreateSave" method="get">
+    Num: <input type="text" name="num" /> <br /> <br />
+    Color: <input type="text" name="color" /> <br /> <br />
+    Manfacture: <input type="text" name="manfacture" /> <br /> <br />
+    Model: <input type="text" name="model" /> <br /> <br />
+
+    <input type="submit" value="ADD" />
+</form> *@
+
+
+@using (Html.BeginForm("create" , "Car" , FormMethod.Post))
+{
+    @Html.Label("Num" , "Num:") <br />
+    @Html.TextBox("num")
+    <br />
+    <br />
+    @Html.Label("Color", "Color:")<br />
+    @Html.TextBox("color")
+    <br />
+    <br />
+    @Html.Label("Manfacture", "Manfacture:")
+    <br />
+    @Html.TextBox("manfacture")
+    <br />
+    <br />
+    @Html.Label("Model", "Model:")
+    <br />
+    @Html.TextBox("model")
+    <br />
+    <br />
+    <input type="submit" value="ADD" />
+
+}

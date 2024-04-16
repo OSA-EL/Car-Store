@@ -1,0 +1,38 @@
+﻿<h1>Get By Num</h1>
+
+@model Car 
+@{
+   // var Current_car = (Car)ViewBag.car;
+}
+
+
+<h3> Your Selected Car Details: </h3>
+
+<table class="table table-bordered table-hover">
+
+    <tr style="background-color:darkorange">
+        <th> Car-Num </th>
+        <th> Car-Color </th>
+        <th> Car-Manfacture </th>
+        <th> Car-Model </th>
+    </tr>
+
+    <tr style="background-color:cornflowerblue">
+@*         <td> @Current_car.Num </td>
+        <td> @Current_car.Color </td>
+        <td> @Current_car.Manfacture </td>
+        <td> @Current_car.Model </td> *@
+
+        <td> @Model.Num </td>
+        <td> @Model.Color </td>
+        <td> @Model.Manfacture </td>
+        <td> @Model.Model </td>
+    </tr>     
+
+</table>
+
+@* <a href="/Car/getall" class="btn btn-primary"> Back to List </a>
+ *@
+
+@Html.ActionLink("Back to List", "getall", "Car", null, new { @class = "btn btn-secondary" })
+

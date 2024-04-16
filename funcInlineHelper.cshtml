@@ -1,0 +1,76 @@
+﻿@{
+    var nums = ViewBag.Numbers;
+    var conf = ViewBag.confname;
+}
+
+@inject Microsoft.AspNetCore.Hosting.IHostingEnvironment hostname 
+
+
+<h1>Test config controller: @ViewBag.confname</h1>
+
+
+
+<h3>---------------------------</h3>
+
+
+
+
+<h3>Enviroment name: @hostname.EnvironmentName</h3>
+<h3>---------------------------</h3>
+
+@* @functions {
+private object TestNegativeNumbers(List<int>
+    listNum)
+    {
+    var positiveNumbers = listNum.Where(x => x > 0);
+    var negativeNumbers = listNum.Where(x => x < 0);
+
+    string result = string.Empty;
+
+    foreach (var item in positiveNumbers)
+    {
+    result += $"<div style='background-color: greenyellow'>This num {item} is Positive</div>";
+    }
+
+    foreach (var item in negativeNumbers)
+    {
+    result += $"<div style='background-color: red'>This num {item} is Negative</div>";
+    }
+
+    return result;
+    }
+  } *@
+
+@*     <div>
+        @Html.Raw(TestNegativeNumbers(nums))
+    </div> *@
+
+<h1>Test Functions </h1>
+<br />
+<br />
+
+@functions {
+    private object testnegativenums(List<int> Listnum)
+    {
+
+        @foreach (var item in Listnum)
+        {
+            if (@item > 0)
+            {
+                <div style="background-color:greenyellow">This num <b>{@item}</b> is Positive</div>
+                <br />
+            }
+            else
+            {
+                <div style="background-color:red">This num <b>{@item}</b> is Negative</div>
+                <br />
+            }
+        }
+
+        return null;
+    }
+}
+
+<div >
+    @Html.Raw(testnegativenums(nums))
+</div>
